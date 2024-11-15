@@ -48,7 +48,16 @@ namespace Shope.Controllers
         public ActionResult<User> Post([FromBody] User user)
         {
             User newUser = service.Adduser(user);
-            return CreatedAtAction(nameof(Get), new { id = user.UserId }, newUser);
+            if (newUser != null)
+            {
+
+                return CreatedAtAction(nameof(Get), new { id = user.UserId }, newUser);
+            }
+            else
+            {
+                return BadRequest();
+            }
+       
 
         }
 

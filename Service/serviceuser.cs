@@ -30,17 +30,18 @@ namespace Service
         }
         public User Adduser(User user)
         {
-            
-            return repository.Adduser(user);
+            int paasswordlength = checkpassword(user.Password);
+                if (paasswordlength >= 2)
+                return repository.Adduser(user);
+                else
+                return null;
             
             
         }
        
         public User login(string username, string password)
         {
-           
-
-            return repository.login(username, password);
+           return repository.login(username, password);
         }
         public void updateUser(int id, User value)
         {
@@ -50,6 +51,7 @@ namespace Service
         }
         public int checkpassword(string password)
         {
+           
             var result = Zxcvbn.Core.EvaluatePassword(password);
             return result.Score;
 
