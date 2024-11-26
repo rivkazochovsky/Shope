@@ -22,6 +22,9 @@ const register = async() => {
             },
             body: JSON.stringify(newUser)
         });
+    //if status==400
+    //weak password
+   
     if (responsePost.ok) { 
         const dataPost = await responsePost.json();
         console.log('POST Data:', dataPost)
@@ -105,6 +108,9 @@ const update = async () => {
         },
         body: JSON.stringify(newUser)
     });
+    //if status==400
+    //weak password
+   
     if (responsePut.ok) { 
 
     alert("update sucsses")

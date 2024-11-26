@@ -48,6 +48,7 @@ namespace Shope.Controllers
         public ActionResult<User> Post([FromBody] User user)
         {
             User newUser = service.Adduser(user);
+            //if user
             return CreatedAtAction(nameof(Get), new { id = user.UserId }, newUser);
 
         }
@@ -74,6 +75,7 @@ namespace Shope.Controllers
         public void Put(int id, [FromBody] User value)
         {
             service.updateUser(id, value);
+            //return result, you should know if succeeded
 
         }
 

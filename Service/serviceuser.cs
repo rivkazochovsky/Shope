@@ -29,8 +29,8 @@ namespace Service
             return repository.Getuserbyid(id);
         }
         public User Adduser(User user)
-        {
-            
+        {  //check password strength
+
             return repository.Adduser(user);
             
             
@@ -44,7 +44,7 @@ namespace Service
         }
         public void updateUser(int id, User value)
         {
-
+            //check password strength
             repository.updateUser(id, value);
 
         }
