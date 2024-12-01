@@ -11,7 +11,8 @@ namespace Entites
     public class User
     {
         public int UserId { get; set; }
-
+        //
+        
         [EmailAddress]
         public string UserName { get; set; }
 
